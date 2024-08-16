@@ -1,0 +1,248 @@
+html {
+  font-family: ‘Inter’, sans-serif;
+  color: #c5b4b4;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+/* #region header */
+.header {
+  box-sizing: border-box;
+  padding: 0px 92px 0px 92px;
+  /* width: 100vh; */
+  
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 77px;  
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  
+}
+
+.header__menu__point {
+  color: #7D7D7D;
+}
+
+.header__signin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+/* #endregion */
+
+.button {
+  background-color: #5d78ff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* #region main */
+.main {
+  padding: 30px 92px;
+}
+
+.main__content {  
+  background-color: #e2f2ff;
+  height: 530px;
+  padding: 80px 50px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.main__content__text {
+  width: 665px;
+  height: 312px; 
+  position: relative;
+}
+
+.main__content_grey {
+  padding-top: 6px; 
+  font-size: 14px;
+  color: #909090;
+}
+
+.main__content__button {
+  position: absolute;
+  bottom: 0; 
+}
+
+.main__content_pictures {
+  position: absolute;
+  top: 53px;
+  right: 64px;
+}
+
+.main__content__picture {
+  position: relative;
+}
+
+.main__content__picture1 {
+  position: absolute;
+  top: 0px;
+  right: 300px;  
+}
+
+.main__content__picture2 {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+}
+
+.main__content__picture3 {
+  position: absolute;
+  top: 270px;
+  right: 350px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  /* Initially hidden */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  /* Start with opacity 0 for fade-in effect */
+  transition: opacity 2s ease;
+  /* Fade-in effect over 2 seconds */
+}
+
+.popup.show {
+  display: flex;
+  /* Show popup */
+  opacity: 1;
+  /* Fade to full opacity */
+}
+
+.main__content__enterprises, .main__content__logo {
+  position: absolute; 
+  bottom: 0;
+}
+
+.main__content__enterprises {
+  padding-bottom: 60px;
+}
+
+.main__content__logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 20px;
+}
+/* #endregion */
+
+/* #region slider */
+
+/* .slider__wrapper {
+  padding-left: 80px;
+}
+
+.slider {
+  width: 100%;               
+}
+
+.slider .slick-slide {
+  display: flex;
+  align-items: stretch;
+  width: 25%;             
+  height: 100%;
+
+  margin: 0 10px;              
+}
+
+.slider .slick-prev, 
+.slider .slick-next {
+  font-size: 20px;             
+  color: #333;               
+}
+
+.slider .slick-dots li button:before {
+  color: #333;             
+}
+
+.slider .slick-track {
+  display: flex;
+  align-items: center;
+  transition: width 1s;
+}
+
+.slider_item {
+  background-color: #F8F8FA;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  height: 100%;
+}
+
+.slider_item:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+}
+
+.slick-slide>div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-list {
+  display: flex;
+} 
+*/
+
+.slick {
+  display: flex;
+  align-items: stretch;
+  
+}
+
+.slick-slide {
+  display: flex;
+  align-items: stretch;
+  /* Розтягує внутрішній контент по висоті слайда */
+  justify-content: center;
+  /* Вирівнює контент по центру горизонтально */
+}
+
+.slick-slide>div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-list {
+  display: flex;
+}
+
+.slick-track {
+  display: flex;
+}
+
+/* #endregion */
