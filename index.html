@@ -6,10 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test Plerdy</title> 
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css"> 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/> 
   <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -22,13 +26,13 @@
         <img src="images/logo.png" alt="Plerdy logo">
       </a>      
       <div class="header__menu">
-        <a href="#">
+        <a href="#" class="unstressed">
           <span class="header__menu__point">Pricing</span>
         </a>
-        <a href="#">
+        <a href="#" class="unstressed">
           <span class="header__menu__point">Use Cases</span>
         </a>
-        <a href="#">
+        <a href="#" class="unstressed">
           <span class="header__menu__point">Book a Demo</span>
         </a>
       </div>
@@ -36,10 +40,53 @@
         <a href="#">
           <span>Sign in</span>
         </a>  
-        <button class="button">Contact sales</button>
+        <button class="button" data-bs-toggle="modal" data-bs-target="#contactSalesModal">Contact sales</button>
       </div>
     </div>
   </header>
+   
+  <div class="modal" id="contactSalesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">  
+        <div class="modal-body">
+          <div class="left-half">
+            <img class="modal-picture" src="images/studio.png" alt="Studio">
+          </div>
+          <div class="right-half">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h1>How to do a Website Audit to Improve SEO & Conversions</h1>
+            <span>You will get an SMS with a link to the webinar</span>
+            <form>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Boris Johnson">
+                <small class="error-message" id="name-error"></small>
+              </div>             
+              <div class="form-group">
+                <label for="phone">Label</label>
+                <input type="tel" id="phone" placeholder="XX XXX XXXX">
+                <small class="error-message" id="phone-error"></small>
+              </div>
+              <div class="button-row">
+                <button type="button" class="support-btn">Support</button>
+                <button type="button" class="contact-btn">Contact sales</button>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="terms">
+                <label for="terms">By signing up, you agree to our <a href="#">Conditions</a> and <a href="#">Privacy
+                    Policy</a></label>
+              </div>
+            </form>
+            <div class="footer">
+              <img src="images/logo.png" alt="Logo">
+              <span>Powered by Plerdy</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
   <div class="main">
     <div class="main__content">
@@ -59,22 +106,21 @@
         </div>
 
         <div class="main__content__button">
-          <button class="button">Run the Plerdy tool</button>
+          <button class="button" data-bs-toggle="modal" data-bs-target="#contactSalesModal">Run the Plerdy tool</button>
         </div>
       </div>
       <div class="main__content_pictures">
         <div class="main__content__picture">
           <img src="images/picture_content.png" alt="Girl is working">          
-        </div>
-        
+        </div>        
       </div>
-      <div class="popup main__content__picture1" id="popup">
+      <div class="emersion main__content__picture1" data-emersion>
         <img src="images/picture1.png" alt="Chart 1">
       </div>
-      <div class="popup main__content__picture2" id="popup">
+      <div class="emersion main__content__picture2" data-emersion>
         <img src="images/picture2.png" alt="Chart 2">
       </div>
-      <div class="popup main__content__picture3" id="popup">
+      <div class="emersion main__content__picture3" data-emersion>
         <img src="images/picture3.png" alt="Chart 3">
       </div>
       <div class="main__content__enterprises">
@@ -104,9 +150,17 @@
   </div>
 
   <div class="footer">
-
-  </div> 
-    
+    <div class="footer-button">
+      <button class="button" data-bs-toggle="modal" data-bs-target="#contactSalesModal">Boost my website conversion</button>
+    </div>
+    <div class="footer-slogan">
+      <span>
+        So, it’s high time for you to stop losing 99% of potential clients due to being unaware of your website users’ behavior
+        patterns and needs.
+      </span>
+    </div>
+  </div>    
+  
   <script src="script.js"></script>  
 </body>
 

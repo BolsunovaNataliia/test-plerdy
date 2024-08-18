@@ -1,8 +1,10 @@
-let x = document.querySelector(".popup")
-setTimeout(function(){
-  x.style.animation = "fade 1s";
-  x.style.opacity = "1"
-  },1000)
+$(document).ready(function () {
+    setTimeout(function () {
+        $('[data-emersion]').each(function (index, element) {
+            $(element).addClass('emersion-show');
+        });
+    }, 500);
+});
 
 function getSliderContent() {
   const slides = [{
@@ -47,6 +49,44 @@ function setEqualHeight() {
     slide.style.height = maxHeight + 'px';
   });
 }
+
+const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      initialCountry: "ua",
+      onlyCountries: ["ua", "us", "gb"],
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js"
+    });
+
+document.querySelector('.contact-btn').addEventListener('click', function(event) {    
+    const nameField = document.querySelector('#name');
+    const phoneField = document.querySelector('#phone');
+       
+    let isValid = true;
+    
+    if (nameField.value.trim() === '') {
+        isValid = false;
+        document.querySelector('#name-error').textContent = 'This field is required.';
+        document.querySelector('#name-error').style.display = 'block';
+        nameField.classList.add('error-border');
+    } else {
+        document.querySelector('#name-error').style.display = 'none';
+        nameField.classList.remove('error-border');
+    }
+   
+    if (phoneField.value.trim() === '') {
+        isValid = false;
+        document.querySelector('#phone-error').textContent = 'This field is required.';
+        document.querySelector('#phone-error').style.display = 'block';
+        phoneField.classList.add('error-border');
+    } else {
+        document.querySelector('#phone-error').style.display = 'none';
+        phoneField.classList.remove('error-border');
+    }
+
+    if (!isValid) {
+        event.preventDefault();
+    }
+});
 
 $(document).ready(function () {
   $('.swiper-wrapper').append(getSliderContent())
